@@ -77,6 +77,7 @@ def get_config(config: dict[str, any], topic: str) -> callable :
     return lambda: unwrap(config.get(topic), {})
 
 # each of these is a function
+# format: off
 model_config        = get_config(GLOBAL_CONFIG,  "model")
 sampling_config     = get_config(GLOBAL_CONFIG,  "sampling")
 draft_model_config  = get_config(model_config(), "draft")
@@ -85,3 +86,4 @@ network_config      = get_config(GLOBAL_CONFIG,  "network")
 logging_config      = get_config(GLOBAL_CONFIG,  "logging")
 developer_config    = get_config(GLOBAL_CONFIG,  "developer")
 embeddings_config   = get_config(GLOBAL_CONFIG,  "embeddings")
+# format:on
